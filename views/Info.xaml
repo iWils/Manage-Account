@@ -1,0 +1,168 @@
+﻿<Grid 
+      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	  xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" >
+
+    <Grid>
+        <StackPanel Orientation="Vertical" Margin="5,5,0,0">
+            <Label Content="Information Account" HorizontalAlignment="Stretch" Height="40" FontSize="20" Foreground="LightSkyBlue" FontWeight="Bold" Margin="0,0,0,0" VerticalAlignment="Top" />
+
+            <GridSplitter HorizontalAlignment="Stretch" Foreground="White" Height="1" Margin="0,20,0,5" VerticalAlignment="Top"/>
+
+            <Label Content="Identifiant" HorizontalAlignment="Stretch" Height="30" FontWeight="Bold" Margin="0,0,0,0" VerticalAlignment="Top" />
+
+            <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                <Label Content="Login:" Width="200"/>
+                <TextBox x:Name="TxbloginInfo" Width="300" FontWeight="Bold" FontStyle="Italic"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                <Label Content="" Width="200"/>
+                <Button x:Name="btnValidInfo" Content="OK" Width="100"/>
+            </StackPanel>
+
+            <GridSplitter HorizontalAlignment="Stretch" Foreground="White" Height="1" Margin="0,20,0,5" VerticalAlignment="Top"/>
+            
+			<StackPanel Margin="0,5,0,0" >
+				<StackPanel Name="Expander_Basic_Block">
+                    <Expander Name="Expander_Basic" Header="Basic infos"  Margin="0,0,0,0" IsExpanded="False" Height="auto">
+                        <ScrollViewer CanContentScroll="True" Height="100">
+                            <Grid>
+                                <StackPanel Orientation="Vertical" Margin="0,0,0,0">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="Is this account enabled ?"/>
+                                        <Label Name="IsEnabled_Value"/>
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="Is this account locked ?"/>
+                                        <Label Name="Locked_Value"/>
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="Is password expired ?"/>
+                                        <Label Name="IsPWDExpired_Value"/>
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="Display name:"/>
+                                        <Label Name="DisplayName_Value"/>
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="Logon account:"/>
+                                        <Label Name="Account_Value"/>
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="Password last change:"/>
+                                        <Label Name="PWDLastChange_Value"/>
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="Password expiration date:"/>
+                                        <Label Name="PWD_Expiration_Date_Value"/>
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="Last logon date:"/>
+                                        <Label Name="LastLogOn_Value"/>
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="User OU:"/>
+                                        <TextBox Name="UserOU_Value" Width="400"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Grid>
+                        </ScrollViewer>
+                    </Expander>
+                </StackPanel>
+				
+				<StackPanel Name="Expander_More_Block">
+                    <Expander Name="Expander_More" Header="More informations" Margin="0,0,0,0" IsExpanded="False" Height="auto">
+                        <ScrollViewer HorizontalScrollBarVisibility="Auto" CanContentScroll="True" Height="100">
+                            <Grid>
+                                <StackPanel Orientation="Vertical" Margin="0,0,0,0">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="User department:"/>
+                                        <Label Name="Dept_Value"/>
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="Mail:"/>
+                                        <Label Name="Mail_Value"/>
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="Office:"/>
+                                        <Label Name="Office_Value"/>
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="Last bad password attempt:"/>
+                                        <Label Name="LastBadPWD_Value"/>
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="Account created on:"/>
+                                        <Label Name="WhenCreated_Value"/>
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="Account changed on:"/>
+                                        <Label Name="WhenChanged_Value"/>
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="Can user change password ?"/>
+                                        <Label Name="CannotChangePassword_Value"/>
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="Password never expires ?"/>
+                                        <Label Name="PWDNeverExpires_Value"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Grid>
+                        </ScrollViewer>
+                    </Expander>
+                </StackPanel>
+				
+				<StackPanel Name="Expander_More_options_Block">												
+					<Expander Name="Expander_More_options" Header="Other options"  Margin="0,0,0,0" IsExpanded="False" Height="auto">
+						<Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+							<StackPanel Orientation="Vertical" Margin="0,0,0,0">					
+								<StackPanel Orientation="Horizontal">
+									<Button Width="40" ToolTip="Export User properties to a CSV file" Name="Export_User_Values" BorderThickness="0" Margin="0,0,0,0" Style="{DynamicResource SquareButtonStyle}" Cursor="Hand" Background="#2196f3">
+										<Rectangle Width="20" Height="20" Fill="White" >
+											<Rectangle.OpacityMask>
+												<VisualBrush Stretch="Fill" Visual="{DynamicResource appbar_people_profile}"/>
+											</Rectangle.OpacityMask>
+										</Rectangle>
+									</Button>
+																			
+									<Button Width="40" ToolTip="Diplay in which group the user belongs" Name="User_Display_Groups" BorderThickness="0" Margin="5,0,0,0" Style="{DynamicResource SquareButtonStyle}" Cursor="Hand" Background="#2b5797">
+										<Rectangle Width="20" Height="20" Fill="white" >
+											<Rectangle.OpacityMask>
+												<VisualBrush Stretch="Fill" Visual="{DynamicResource appbar_group}"/>
+											</Rectangle.OpacityMask>
+										</Rectangle>
+									</Button>
+								</StackPanel>
+							</StackPanel>						
+						</Grid>
+					</Expander> 				
+				</StackPanel>
+			</StackPanel>
+			
+            <StackPanel Orientation="Vertical" Margin="10,10,0,0" >
+                <Controls:MetroProgressBar x:Name="BarprogressIfo" Width="250"
+                      Margin="4"
+                      IsIndeterminate="True" HorizontalAlignment="Center" Height="10" Visibility="Hidden" />
+            </StackPanel>
+        </StackPanel>
+        
+    </Grid>
+</Grid>
