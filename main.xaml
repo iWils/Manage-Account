@@ -9,6 +9,7 @@
 		Width="1024" 
 		WindowStartupLocation="CenterScreen" 
 		GlowBrush="{DynamicResource controlsApps.Brushes.Accent}"
+		BorderBrush="Black"
 		Topmost="True"
 		>
 
