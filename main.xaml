@@ -5,12 +5,10 @@
 		xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
 		Title="Gestion des comptes"
         Name="MainPanel" 
-		MaxHeight="768" 
-		MaxWidth="1024" 
+		Height="768" 
+		Width="1024" 
 		WindowStartupLocation="CenterScreen" 
 		GlowBrush="{DynamicResource controlsApps.Brushes.Accent}"
-		ResizeMode="CanMinimize"
-		BorderBrush="Blue"
 		Topmost="True"
 		>
 
