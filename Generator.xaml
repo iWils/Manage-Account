@@ -1,0 +1,98 @@
+<Controls:MetroWindow 
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+		Title="Generator - Config file"
+		Width="500"
+		ResizeMode="NoResize"
+		Height="Auto"
+		SizeToContent="Height"
+		BorderBrush="DodgerBlue"
+		BorderThickness="0.5"
+		WindowStartupLocation ="CenterScreen"
+		>
+    
+	<Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="resources\Icons.xaml" />
+                <!-- ControlsApps.Metro resource dictionaries. Make sure that all file names are Case Sensitive! -->
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+				<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <!-- Theme setting -->
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Light.Blue.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+	<Controls:MetroWindow.RightWindowCommands>
+		<Controls:WindowCommands>
+			<Button x:Name="btn_night" >
+				<iconPacks:PackIconMaterial Kind="ThemeLightDark" Width="24" Height="24" VerticalAlignment="Center"/>
+			</Button>
+		</Controls:WindowCommands>	
+	</Controls:MetroWindow.RightWindowCommands>
+    
+    <Grid>
+        <StackPanel Orientation="Vertical" Margin="0,0,0,0">
+            <StackPanel VerticalAlignment="Center">
+                <Label Content="Générateur de fichier de configuration" HorizontalAlignment="Center" FontWeight="Bold" FontSize="14"/>
+            </StackPanel>
+
+            <GridSplitter HorizontalAlignment="Stretch" Foreground="White" Height="1" Margin="0,0,0,5" VerticalAlignment="Top"/>
+
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="0,0,0,0">
+                <Border BorderThickness="1" Width="400">
+                    <GroupBox Header="Organisation" VerticalAlignment="Center">
+                        <StackPanel>
+                            <TextBlock>Quadigramme de la société ?</TextBlock>
+                            <TextBox x:Name="TxtOrga" TextWrapping="Wrap" FontStyle="Italic" TextAlignment="Center" ToolTip="QADI"/>
+                        </StackPanel>
+                    </GroupBox>
+                </Border>
+            </StackPanel>
+
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="0,0,0,0">
+                <Border BorderThickness="1" Width="400" Height="130">
+                    <GroupBox Header="Compte Administrateur" VerticalAlignment="Center" >
+                        <StackPanel>
+                            <TextBlock>Id. :</TextBlock>
+                            <TextBox x:Name="TxtLogin" TextWrapping="Wrap" FontStyle="Italic" TextAlignment="Center" ToolTip="admin@domain.com"/>
+                            <TextBlock>Password :</TextBlock>
+                            <PasswordBox x:Name="PasBox" FontStyle="Italic" PasswordChar="*" />
+                        </StackPanel>
+                    </GroupBox>
+                </Border>
+            </StackPanel>
+			
+			<StackPanel VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="0,0,0,0">
+                <Border BorderThickness="1" Width="400">
+                    <GroupBox Header="Active Directory" VerticalAlignment="Center">
+                        <StackPanel>
+                            <TextBlock>Qu'elle est le FQDN de votre DC ?</TextBlock>
+                            <TextBox x:Name="TxtADDC" TextWrapping="Wrap" FontStyle="Italic" TextAlignment="Center" ToolTip="SRV-AD.domain.com" />
+                        </StackPanel>
+                    </GroupBox>
+                </Border>
+            </StackPanel>
+            
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="0,0,0,0">
+                <Border BorderThickness="1" Width="400" Height="130">
+                    <GroupBox Header="Messagerie" VerticalAlignment="Center" >
+                        <StackPanel>
+                            <TextBlock>Serveur de messagerie</TextBlock>
+                            <TextBox x:Name="TxtServer" TextWrapping="Wrap" FontStyle="Italic" TextAlignment="Center" ToolTip="serveur.domain.com"/>
+                            <TextBlock>E-mail</TextBlock>
+                            <TextBox x:Name="TxtMail" TextWrapping="Wrap" FontStyle="Italic" TextAlignment="Center" ToolTip="email@domain.com"/>
+                        </StackPanel>
+                    </GroupBox>
+                </Border>
+            </StackPanel>
+            
+            <GridSplitter HorizontalAlignment="Stretch" Foreground="White" Height="1" Margin="0,5,0,5" VerticalAlignment="Top"/>
+            <Button x:Name="BtnGenerate" Width="160" Height="32" Margin="0,10,0,10">Générer</Button>
+        </StackPanel>
+
+    </Grid>
+</Controls:MetroWindow>
