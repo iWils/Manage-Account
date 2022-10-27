@@ -31,47 +31,47 @@
                             <Grid>
                                 <StackPanel Orientation="Vertical" Margin="0,0,0,0">
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content="Is this account enabled ?"/>
+                                        <Label Content="Ce compte est-il activé ?"/>
                                         <Label Name="IsEnabled_Value"/>
                                     </StackPanel>
 
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content="Is this account locked ?"/>
+                                        <Label Content="Ce compte est-il verrouillé ?"/>
                                         <Label Name="Locked_Value"/>
                                     </StackPanel>
 
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content="Is password expired ?"/>
+                                        <Label Content="Le mot de passe est-il expiré ?"/>
                                         <Label Name="IsPWDExpired_Value"/>
                                     </StackPanel>
 
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content="Display name:"/>
+                                        <Label Content="Nom d'affichage :"/>
                                         <Label Name="DisplayName_Value"/>
                                     </StackPanel>
 
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content="Logon account:"/>
+                                        <Label Content="Compte de connexion :"/>
                                         <Label Name="Account_Value"/>
                                     </StackPanel>
 
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content="Password last change:"/>
+                                        <Label Content="Dernier changement de mot de passe :"/>
                                         <Label Name="PWDLastChange_Value"/>
                                     </StackPanel>
 
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content="Password expiration date:"/>
+                                        <Label Content="Date d'expiration du mot de passe :"/>
                                         <Label Name="PWD_Expiration_Date_Value"/>
                                     </StackPanel>
 
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content="Last logon date:"/>
+                                        <Label Content="Date de la dernière connexion :"/>
                                         <Label Name="LastLogOn_Value"/>
                                     </StackPanel>
 
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content="User OU:"/>
+                                        <Label Content="OU Utilisateur:"/>
                                         <TextBox Name="UserOU_Value" Width="400"/>
                                     </StackPanel>
                                 </StackPanel>
@@ -86,42 +86,42 @@
                             <Grid>
                                 <StackPanel Orientation="Vertical" Margin="0,0,0,0">
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content="User department:"/>
+                                        <Label Content="Département :"/>
                                         <Label Name="Dept_Value"/>
                                     </StackPanel>
 
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content="Mail:"/>
+                                        <Label Content="Mail :"/>
                                         <Label Name="Mail_Value"/>
                                     </StackPanel>
 
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content="Office:"/>
+                                        <Label Content="Bureau :"/>
                                         <Label Name="Office_Value"/>
                                     </StackPanel>
 
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content="Last bad password attempt:"/>
+                                        <Label Content="Dernière tentative de mauvais mot de passe :"/>
                                         <Label Name="LastBadPWD_Value"/>
                                     </StackPanel>
 
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content="Account created on:"/>
+                                        <Label Content="Compte créé le :"/>
                                         <Label Name="WhenCreated_Value"/>
                                     </StackPanel>
 
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content="Account changed on:"/>
+                                        <Label Content="Compte modifié le:"/>
                                         <Label Name="WhenChanged_Value"/>
                                     </StackPanel>
 
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content="Can user change password ?"/>
+                                        <Label Content="L'utilisateur peut-il changer son mot de passe ?"/>
                                         <Label Name="CannotChangePassword_Value"/>
                                     </StackPanel>
 
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content="Password never expires ?"/>
+                                        <Label Content="Le mot de passe n'expire jamais ?"/>
                                         <Label Name="PWDNeverExpires_Value"/>
                                     </StackPanel>
                                 </StackPanel>
@@ -135,7 +135,7 @@
 						<Grid HorizontalAlignment="Center" VerticalAlignment="Center">
 							<StackPanel Orientation="Vertical" Margin="0,0,0,0">					
 								<StackPanel Orientation="Horizontal">
-									<Button Width="40" ToolTip="Export User properties to a CSV file" Name="Export_User_Values" BorderThickness="0" Margin="0,0,0,0" Style="{DynamicResource SquareButtonStyle}" Cursor="Hand" Background="#2196f3">
+									<Button Width="40" ToolTip="Export des propriétés de l'utilisateur vers un fichier CSV" Name="Export_User_Values" BorderThickness="0" Margin="0,0,0,0" Style="{DynamicResource SquareButtonStyle}" Cursor="Hand" Background="#2196f3">
 										<Rectangle Width="20" Height="20" Fill="White" >
 											<Rectangle.OpacityMask>
 												<VisualBrush Stretch="Fill" Visual="{DynamicResource appbar_people_profile}"/>
@@ -143,7 +143,7 @@
 										</Rectangle>
 									</Button>
 																			
-									<Button Width="40" ToolTip="Diplay in which group the user belongs" Name="User_Display_Groups" BorderThickness="0" Margin="5,0,0,0" Style="{DynamicResource SquareButtonStyle}" Cursor="Hand" Background="#2b5797">
+									<Button Width="40" ToolTip="Afficher le groupe auquel appartient l'utilisateur" Name="User_Display_Groups" BorderThickness="0" Margin="5,0,0,0" Style="{DynamicResource SquareButtonStyle}" Cursor="Hand" Background="#2b5797">
 										<Rectangle Width="20" Height="20" Fill="white" >
 											<Rectangle.OpacityMask>
 												<VisualBrush Stretch="Fill" Visual="{DynamicResource appbar_group}"/>
