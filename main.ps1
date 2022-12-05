@@ -45,6 +45,18 @@ If(Test-Path $Configfile){
  }
 
 ##########################################################################
+####                    Fonction d'envoi de mail                      ####
+##########################################################################
+
+function SendMail ($Firstname,$Password,$Usermail,$Server, $Adminmail){
+
+    Send-MailMessage -To "admin"
+    $XamlLoader=(New-Object System.Xml.XmlDocument)
+    $XamlLoader.Load($filename)
+    return $XamlLoader
+}
+
+##########################################################################
 ####               Chargement de XAML pour l'IHM WPF                  ####
 ##########################################################################
 
