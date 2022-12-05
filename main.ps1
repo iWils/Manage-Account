@@ -48,12 +48,28 @@ If(Test-Path $Configfile){
 ####                    Fonction d'envoi de mail                      ####
 ##########################################################################
 
-function SendMail ($Firstname,$Password,$Usermail,$Server, $Adminmail){
+function SendMail ($Firstname, $Usermail, $Userpwd, $Server, $Adminmail){
 
-    Send-MailMessage -To "admin"
-    $XamlLoader=(New-Object System.Xml.XmlDocument)
-    $XamlLoader.Load($filename)
-    return $XamlLoader
+    #Encodage UTF8
+    $encodingMail = [System.Text.Encoding]::UTF8
+    
+    #Le Sujet de l'email
+    $Subject = "Réinitialisation de mot passe"
+    
+    #Le corps de votre message
+    $Bodymail ="
+    <font face=""Comic sans MS"">
+    Bonjour $Firstname,
+    <p> Voici votre nouveau mot de passe <br>
+        - Mot de passe: $Userpwd
+    <p>Cordialement, <br>
+    </P>
+    Administrateur système
+    </font>"
+
+    #Commande d'envoi
+    Send-MailMessage -SmtpServer $Server -From $Adminmail -To $Usermail -Subject $Subject -Body $Bodymail -BodyAsHtml -Priority High -Encoding $encodingMail -ErrorAction Stop
+
 }
 
 ##########################################################################
@@ -168,6 +184,7 @@ $btnValidUnlk.add_Click({
         }
 
         $BarprogressUlk.Visibility="Hidden"
+        
     }
     else{
         exit 1
@@ -226,7 +243,8 @@ $btnValidRst.add_Click({
 
             Write-Host "OK pour l'AD" -f Green
             Add-content -path $LogFile -Value " --- $DateHeure : Nouveau mot de passe pour le compte OK pour l'AD ---"
-            [MahApps.Metro.Controls.Dialogs.DialogManager]::ShowMessageAsync($Window, "Succès :-)", "Nouveau mot de passe appliqué et envoyé à l'adresse $($Usermail.EmailAddress) !!!",$okOnly, $settings)		
+            [MahApps.Metro.Controls.Dialogs.DialogManager]::ShowMessageAsync($Window, "Succès :-)", "Nouveau mot de passe appliqué et envoyé à l'adresse $($Usermail.EmailAddress) !!!",$okOnly, $settings)
+            SendMail -Firstname $($Usermail.Name) -Usermail $($Usermail.EmailAddress) -Userpwd $Newpasswd -Server $($Cfg.ServerMail) -Adminmail $($Cfg.Mail)
         }
         Catch{ 
             Write-host "Erreur pour l'AD" -f Red
@@ -254,8 +272,8 @@ $btnValidInfo = $InfoXaml.FindName("btnValidInfo")
 $BarprogressIfo = $InfoXaml.FindName("BarprogressIfo")
 
 # Basic infos block
-$Expander_Basic_Block = $InfoXaml.findname("Expander_Basic_Block") 
-$Expander_Basic = $InfoXaml.findname("Expander_Basic") 
+#$Expander_Basic_Block = $InfoXaml.findname("Expander_Basic_Block") 
+#$Expander_Basic = $InfoXaml.findname("Expander_Basic") 
 $IsEnabled_Value = $InfoXaml.findname("IsEnabled_Value") 
 $Locked_Value = $InfoXaml.findname("Locked_Value") 
 $IsPWDExpired_Value = $InfoXaml.findname("IsPWDExpired_Value") 
@@ -267,8 +285,8 @@ $LastLogOn_Value = $InfoXaml.findname("LastLogOn_Value")
 $UserOU_Value = $InfoXaml.findname("UserOU_Value") 
 
 # More infos block
-$Expander_More_Block = $InfoXaml.findname("Expander_More_Block") 
-$Expander_More = $InfoXaml.findname("Expander_More") 
+#$Expander_More_Block = $InfoXaml.findname("Expander_More_Block") 
+#$Expander_More = $InfoXaml.findname("Expander_More") 
 $Dept_Value = $InfoXaml.findname("Dept_Value") 
 $Mail_Value = $InfoXaml.findname("Mail_Value") 
 $Office_Value = $InfoXaml.findname("Office_Value") 
@@ -279,10 +297,10 @@ $CannotChangePassword_Value = $InfoXaml.findname("CannotChangePassword_Value")
 $PWDNeverExpires_Value = $InfoXaml.findname("PWDNeverExpires_Value") 
 
 # More options action block
-$Expander_More_options_Block = $InfoXaml.findname("Expander_More_options_Block") 
-$Expander_More_options = $InfoXaml.findname("Expander_More_options") 
+#$Expander_More_options_Block = $InfoXaml.findname("Expander_More_options_Block") 
+#$Expander_More_options = $InfoXaml.findname("Expander_More_options") 
 $Export_User_Values = $InfoXaml.findname("Export_User_Values") 
-$User_Display_Groups = $InfoXaml.findname("User_Display_Groups")
+#$User_Display_Groups = $InfoXaml.findname("User_Display_Groups")
 
 
 $btnValidInfo.add_Click({
